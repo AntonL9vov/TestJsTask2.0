@@ -1,0 +1,78 @@
+.cards_plants_header{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid $gray5;
+  margin: 16px 0px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 120px 40px 0px;
+}
+
+.cards_plants_header p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.cards_plants_header select{
+  padding: 8px 12px;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: black;
+  width: 130px;
+  justify-self: left;
+}
+
+.cards_plants{
+  margin: 0px 40px 80px;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+.plant_card{
+  transition: all 0.2s;
+  justify-self: center;
+}
+
+.plant_card:hover{
+  transform: scale(1.04);
+}
+
+.plant_name{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.price{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+@media (max-width:1125px) {
+  .cards_plants{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (max-width:500px) {
+  .cards_plants{
+    grid-template-columns: 1fr;
+  }
+}

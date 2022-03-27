@@ -1,0 +1,6 @@
+.cards_plants_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*# sourceMappingURL=plant_cards.css.map */

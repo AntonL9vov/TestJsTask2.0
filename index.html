@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plant shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@700;900&family=PT+Sans:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--    <script defer src="components/CardComponent.js"></script>-->
+    <script defer src="jsFiles/SortPlants.js"></script>
+    <script defer src="jsFiles/form.js"></script>
+    <script defer src="jsFiles/HeaderButtons.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div>
+        <img src="public/logoText.svg" class="logo">
+        <img src="public/MainPlantPhoto.svg" alt="plant" class="main_img">
+    </div>
+    <div class="header_right">
+        <div class="header_right_description">
+            <button class="form_button" id="form_button">Форма</button>
+            <h1>Kembang Flower Mantap</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, </p>
+        </div>
+        <div class="buttons">
+            <div class="header_button button_ghost">
+                <button>
+                    <img src="public/ArrowLeft.svg" class="arrowLeft" alt="arrowLeft">
+                    Previous
+                </button>
+                <p id="left_button_text">Kaktus Plant</p>
+            </div>
+            <div class="header_button button_green">
+                <button>
+                    Next
+                    <img src="public/ArrowLeft.svg" class="arrowRight" alt="arrowRight">
+                </button>
+                <p id="right_button_text">Rahasia Plant</p>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="cards_icon" id="cards">
+        <div class="info_card">
+            <div class="info_card_top">
+                <img src="public/TruckIcon.svg" alt="truckIcon">
+                <p>Fast <br/>Delivery</p>
+            </div>
+            <p class="info_card_bottom">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard
+            </p>
+        </div>
+        <div class="info_card">
+            <div class="info_card_top">
+                <img src="public/HeadPhonesIcon.svg" alt="headPhonesIcon">
+                <p>Great Customer <br/> Service</p>
+            </div>
+            <p class="info_card_bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum has been the industry's standard </p>
+        </div>
+        <div class="info_card">
+            <div class="info_card_top">
+                <img src="public/PlantIcon.svg" alt="plantIcon">
+                <p>Original <br/> Plants</p>
+            </div>
+            <p class="info_card_bottom"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard </p>
+        </div>
+        <div class="info_card">
+            <div class="info_card_top">
+                <img src="public/DollarIcon.svg" alt="dollarIcon">
+                <p>Affordable <br/> Price</p>
+            </div>
+            <p class="info_card_bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum has been the industry's standard </p>
+        </div>
+    </div>
+    <div class="cards_plants_header">
+        <p>Featured Plants</p>
+        <select onchange="sortPlants(this.selectedIndex)">
+            <option value="cheap">Cheap first</option>
+            <option value="expensive">Expensive first</option>
+        </select>
+    </div>
+    <div class="cards_plants">
+        <div class="plant_card" >
+            <img src="public/kaktus.jpg" alt="kaktus">
+            <p class="plant_name">Kaktus Plants</p>
+            <p class="price">IDR 85.000</p>
+        </div>
+        <div class="plant_card">
+            <img src="public/landak.jpg" alt="landak">
+            <p class="plant_name">Landak Plants</p>
+            <p class="price">IDR 105.000</p>
+        </div>
+        <div class="plant_card">
+            <img src="public/kekubunck1.jpg" alt="kekubunk1">
+            <p class="plant_name">Kecubung Plants</p>
+            <p class="price">IDR 87.000</p>
+        </div>
+        <div class="plant_card">
+            <img src="public/kekubunck2.jpg" alt="kekubunk2">
+            <p class="plant_name">Kecubung Plants</p>
+            <p class="price">IDR 84.000</p>
+        </div>
+        <div class="plant_card">
+            <img src="public/kekubunck3.jpg" alt="kekubunk3">
+            <p class="plant_name">Kecubung Plants</p>
+            <p class="price">IDR 83.000</p>
+        </div>
+    </div>
+</main>
+
+    <div class="form" id="form">
+        <div class="form_overlay"></div>
+    </div>
+</body>
+</html>

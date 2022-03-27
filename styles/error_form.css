@@ -1,0 +1,31 @@
+.error_window {
+  border-radius: 8.37862px;
+  color: red;
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #FFFFFF;
+}
+
+.error_window p {
+  height: 21px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 121.5%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=error_form.css.map */
