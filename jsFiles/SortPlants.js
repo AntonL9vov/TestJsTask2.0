@@ -6,10 +6,8 @@ function sortPlants(index){
         prices.push(parent.removeChild(plants[i]));//удаляем все растения со страницы и добавляем в массив
     }
     prices.sort((x, y) => {
-        let xText = x.querySelector('p:nth-child(3)').textContent; // выбираем цену
-        let yText = y.querySelector('p:nth-child(3)').textContent; // выбираем цену
-        xText = xText.replace(/[^+\d]/g, '') //удаляем все кроме цифр
-        yText = yText.replace(/[^+\d]/g, '')
+        let xText = x.querySelector('p:nth-child(3)').textContent.replace(/[^+\d]/g, ''); // выбираем цену и удаляем все кроме цифр
+        let yText = y.querySelector('p:nth-child(3)').textContent.replace(/[^+\d]/g, '');
         let xPrice = parseInt(xText);//переводим в int
         let yPrice = parseInt(yText);
 

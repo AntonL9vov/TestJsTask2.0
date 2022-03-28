@@ -1,29 +1,29 @@
-let form = $("#form");
+const form = $("#form");
 
-let button = $("#form_button");
+const button = $("#form_button");
 
 
 //форма обратной связи
-let form_window = '<div class="form_window" id="form_window">\n' +
-    '            <div>\n' +
-    '                <button class="form_close" id="form_close"><img src="../public/X.svg"></button>\n' +
-    '                <img class="map_point" src="../public/MapPoint.jpg" alt="map point">\n' +
-    '            </div>\n' +
-    '            <p class="form_name" id="form_name">Форма сайта</p>\n' +
-    '            <p class="form_text" id="form_text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>\n' +
-    '            <form class="form_input_fields">\n' +
-    '                <input name="name" type="text" class="form_input_name" placeholder="Имя" id="form_input_name">\n' +
-    '                <input name="number" type="text" class="form_input_number" placeholder="Номер телефона" id="form_input_number">\n' +
-    '            </form>\n' +
-    '            <div class="form_footer">\n' +
-    '                <button class="form_cancel" id="form_cancel">Отменить</button>\n' +
-    '                <button class="form_submit" id="form_submit">Отправить</button>\n' +
-    '            </div>\n' +
-    '        </div>';
+const form_window = `<div class="form_window" id="form_window">
+               <div>
+                    <button class="form_close" id="form_close"><img src="../public/X.svg"></button>
+                    <img class="map_point" src="../public/MapPoint.jpg" alt="map point">
+                </div>
+                <p class="form_name" id="form_name">Форма сайта</p>
+                <p class="form_text" id="form_text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+                <form class="form_input_fields">
+                    <input name="name" type="text" class="form_input_name" placeholder="Имя" id="form_input_name">
+                    <input name="number" type="text" class="form_input_number" placeholder="Номер телефона" id="form_input_number">
+               </form>
+               <div class="form_footer">
+                   <button class="form_cancel" id="form_cancel">Отменить</button>
+                    <button class="form_submit" id="form_submit">Отправить</button>
+                </div>
+            </div>;`
 
 
 //форма ошибки
-let errorGet = '<div class="error_window"><p>Что-то не так</p></div>'
+const errorGet = '<div class="error_window"><p>Что-то не так</p></div>'
 
 //функции для создания таблицы
 function createTableHeader(el) {
@@ -43,7 +43,7 @@ function createTableStr(element) {
 }
 
 function createTable(el) {
-    let header = createTableHeader(el);
+    const header = createTableHeader(el);
     let tableStr = ''
     for (let key in el) {
         tableStr = tableStr + '<tr>' + createTableStr(el[key]) + '</tr>'
@@ -55,7 +55,7 @@ function createTable(el) {
 
 //функции для валидации
 function nameValidation(name) {
-    if (name.length === 0){
+    if (name.length === 0) {
         return "Имя не должно быть пустым"
     }
     if (name.length < 3) {
@@ -69,7 +69,7 @@ function nameValidation(name) {
 }
 
 function numberValidation(number) {
-    if (number.length === 0){
+    if (number.length === 0) {
         return "Номер не должен быть пустым"
     }
     if (number[0] === '+') {
@@ -100,18 +100,18 @@ button.on('click', (e) => {
     })
     form.append(form_window)
 
-    let close = $(".form_close")
+    const close = $(".form_close")
 
-    let cansel = $(".form_cancel")
+    const cansel = $(".form_cancel")
 
-    let submit = $(".form_submit")
+    const submit = $(".form_submit")
 
-    let name = $(".form_input_name")
+    const name = $(".form_input_name")
 
-    let number = $(".form_input_number")
+    const number = $(".form_input_number")
 
     $(close).on('click', (e) => {
-        $('#form_widow').detach()
+        $('#form_widow').remove()
         form.css({
             display: "none"
         })
@@ -140,8 +140,8 @@ button.on('click', (e) => {
                 '  </div>\n' +
                 '</div>'
             )
-            let array = [name[0].value, number[0].value]
-            let data = JSON.stringify(array)
+            const array = [name[0].value, number[0].value]
+            const data = JSON.stringify(array)
             $.ajax({
                 type: "Get",
                 url: "https://jsonplaceholder.typicode.com/todos",
@@ -155,7 +155,7 @@ button.on('click', (e) => {
                         }
                         return 0;
                     })
-                    let table = createTable(users);
+                    const table = createTable(users);
                     form.append(table)
                 },
                 error: function (response) {
@@ -164,10 +164,10 @@ button.on('click', (e) => {
             })
             $(".spin-wrapper").remove();//удаление спиннера
         } else {
-            if (nameValidation(name[0].value) !== ''){
+            if (nameValidation(name[0].value) !== '') {
                 alert(nameValidation(name[0].value))
             }
-            if(numberValidation(number[0].value) !== ''){
+            if (numberValidation(number[0].value) !== '') {
                 alert(numberValidation(name[0].value))
             }
         }
